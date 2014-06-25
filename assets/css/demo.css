@@ -709,7 +709,7 @@ select[disabled],
 select[disabled] option,
 select[disabled] optgroup,
 textarea[disabled],
-.button_disabled {
+a.button_disabled {
   box-shadow: none;
   color: #888;
   cursor: default;
@@ -717,6 +717,23 @@ textarea[disabled],
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+button[disabled]:hover,
+a.button_disabled:hover,
+input[type="reset"][disabled]:hover,
+input[type="submit"][disabled]:hover,
+input[type="button"][disabled]:hover {
+  background: #f0f0f0;
+}
+
+button[disabled]:active,
+a.button_disabled:active,
+input[type="reset"][disabled]:active,
+input[type="submit"][disabled]:active,
+input[type="button"][disabled]:active {
+  border-color: #ddd #bbb #999;
+  box-shadow: none;
 }
 
 input::-webkit-input-placeholder,
@@ -802,7 +819,6 @@ optgroup::-moz-focus-inner {
 .placeholder_text {
   color: #888;
 }
-
 
 
 
