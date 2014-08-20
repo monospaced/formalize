@@ -61,21 +61,21 @@ angular.module('formalize', [])
 
             if (value === '' || value === attrs.fmzPlaceholder) {
               domElement.value = attrs.fmzPlaceholder;
-              element.addClass('placeholder_text');
+              element.addClass('placeholder-text');
             }
           }
 
           function remove() {
             if (domElement.value == attrs.fmzPlaceholder) {
               domElement.value = '';
-              element.removeClass('placeholder_text');
+              element.removeClass('placeholder-text');
             }
           }
 
           function restore() {
             if (domElement.value === '') {
               domElement.value = attrs.fmzPlaceholder;
-              element.addClass('placeholder_text');
+              element.addClass('placeholder-text');
             }
           }
 

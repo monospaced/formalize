@@ -45,14 +45,14 @@ var FORMALIZE = (function(window, document, undefined) {
       },
       // FORMALIZE.init.full_input_size
       full_input_size: function() {
-        if (!IE7 || !Ext.query('textarea, input.input_full')) {
+        if (!IE7 || !Ext.query('textarea, input.input--full')) {
           return;
         }
 
-        // This fixes width: 100% on <textarea> and class="input_full".
+        // This fixes width: 100% on <textarea> and class="input--full".
         // It ensures that form elements don't go wider than container.
-        Ext.each(Ext.query('textarea, input.input_full'), function(el) {
-          Ext.get(el).wrap('<span class="input_full_wrap"></span>');
+        Ext.each(Ext.query('textarea, input.input--full'), function(el) {
+          Ext.get(el).wrap('<span class="input--full-wrap"></span>');
         });
       },
       // FORMALIZE.init.ie6_skin_inputs
@@ -133,7 +133,7 @@ var FORMALIZE = (function(window, document, undefined) {
           Ext.get(el).on('focus', function() {
             if (el.value === text) {
               el.value = '';
-              Ext.get(el).removeClass('placeholder_text');
+              Ext.get(el).removeClass('placeholder-text');
             }
           });
 
@@ -146,7 +146,7 @@ var FORMALIZE = (function(window, document, undefined) {
           form.on('submit', function() {
             if (el.value === text) {
               el.value = '';
-              Ext.get(el).removeClass('placeholder_text');
+              Ext.get(el).removeClass('placeholder-text');
             }
           });
 
@@ -177,7 +177,7 @@ var FORMALIZE = (function(window, document, undefined) {
 
           if (!el.value || el.value === text) {
             el.value = text;
-            Ext.get(el).addClass('placeholder_text');
+            Ext.get(el).addClass('placeholder-text');
           }
         });
       }

@@ -45,14 +45,14 @@ var FORMALIZE = (function(window, document, undefined) {
       },
       // FORMALIZE.init.full_input_size
       full_input_size: function() {
-        if (!IE7 || !$$('textarea, input.input_full').length) {
+        if (!IE7 || !$$('textarea, input.input--full').length) {
           return;
         }
 
-        // This fixes width: 100% on <textarea> and class="input_full".
+        // This fixes width: 100% on <textarea> and class="input--full".
         // It ensures that form elements don't go wider than container.
-        $$('textarea, input.input_full').each(function(el) {
-          new Element('span.input_full_wrap').wraps(el);
+        $$('textarea, input.input--full').each(function(el) {
+          new Element('span.input--full-wrap').wraps(el);
         });
 
       },
@@ -133,7 +133,7 @@ var FORMALIZE = (function(window, document, undefined) {
           el.addEvents({
             focus: function() {
               if (el.value === text) {
-                el.set('value', '').removeClass('placeholder_text');
+                el.set('value', '').removeClass('placeholder-text');
               }
             },
             blur: function() {
@@ -148,7 +148,7 @@ var FORMALIZE = (function(window, document, undefined) {
           form && form.addEvents({
             'submit': function() {
               if (el.value === text) {
-                el.set('value', '').removeClass('placeholder_text');
+                el.set('value', '').removeClass('placeholder-text');
               }
             },
             'reset': function() {
@@ -178,7 +178,7 @@ var FORMALIZE = (function(window, document, undefined) {
           var text = el.get('placeholder');
 
           if (!el.value || el.value === text) {
-            el.set('value', text).addClass('placeholder_text');
+            el.set('value', text).addClass('placeholder-text');
           }
         });
       }

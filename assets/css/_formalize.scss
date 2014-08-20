@@ -7,38 +7,38 @@
 // `Widths
 //----------------------------------------------------------------------------------------------------
 
-.input_tiny {
+.input--tiny {
   width: 50px;
 }
 
-.input_small {
+.input--small {
   width: 100px;
 }
 
-.input_medium {
+.input--medium {
   width: 150px;
 }
 
-.input_large {
+.input--large {
   width: 200px;
 }
 
-.input_xlarge {
+.input--xlarge {
   width: 250px;
 }
 
-.input_xxlarge {
+.input--xxlarge {
   width: 300px;
 }
 
 @if $legacy-support-for-ie7 {
-  .input_full {
+  .input--full {
     width: 100%;
   }
 
-  // Added via JS to <textarea> and class="input_full".
+  // Added via JS to <textarea> and class="input--full".
   // Applies only to IE7. Other browsers don't need it.
-  .input_full_wrap {
+  .input--full-wrap {
     display: block;
     padding-right: 8px;
   }

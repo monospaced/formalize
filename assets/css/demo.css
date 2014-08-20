@@ -524,35 +524,35 @@ figure {
 
 /*! formalize.css */
 
-.input_tiny {
+.input--tiny {
   width: 50px;
 }
 
-.input_small {
+.input--small {
   width: 100px;
 }
 
-.input_medium {
+.input--medium {
   width: 150px;
 }
 
-.input_large {
+.input--large {
   width: 200px;
 }
 
-.input_xlarge {
+.input--xlarge {
   width: 250px;
 }
 
-.input_xxlarge {
+.input--xxlarge {
   width: 300px;
 }
 
-.input_full {
+.input--full {
   width: 100%;
 }
 
-.input_full_wrap {
+.input--full-wrap {
   display: block;
   padding-right: 8px;
 }
@@ -746,8 +746,8 @@ textarea:-moz-placeholder {
   color: #888;
 }
 
-input.placeholder_text,
-textarea.placeholder_text {
+input.placeholder-text,
+textarea.placeholder-text {
   color: #888;
 }
 
@@ -796,7 +796,7 @@ optgroup::-moz-focus-inner {
   border: 0;
 }
 
-.placeholder_text {
+.placeholder-text {
   color: #888;
 }
 

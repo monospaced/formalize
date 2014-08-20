@@ -38,14 +38,14 @@ YUI.add('formalize', function(Y) {
       },
       // Y.formalize.init.full_input_size
       full_input_size: function() {
-        if (!IE7 || !Y.all('textarea, input.input_full')) {
+        if (!IE7 || !Y.all('textarea, input.input--full')) {
           return;
         }
 
-        // This fixes width: 100% on <textarea> and class="input_full".
+        // This fixes width: 100% on <textarea> and class="input--full".
         // It ensures that form elements don't go wider than container.
-        Y.all('textarea, input.input_full').each(function(el) {
-          var wrapper = Y.Node.create('<span class="input_full_wrap"></span>');
+        Y.all('textarea, input.input--full').each(function(el) {
+          var wrapper = Y.Node.create('<span class="input--full-wrap"></span>');
           wrapper.append(el.replace(wrapper));
         });
       },
@@ -126,13 +126,13 @@ YUI.add('formalize', function(Y) {
 
           function add_placeholder() {
             if (!el.get('value') || el.get('value') === text) {
-              el.set('value', text).addClass('placeholder_text');
+              el.set('value', text).addClass('placeholder-text');
             }
           }
 
           el.on('focus', function() {
             if (el.get('value') === text) {
-              el.set('value', '').removeClass('placeholder_text');
+              el.set('value', '').removeClass('placeholder-text');
             }
           });
 
@@ -144,7 +144,7 @@ YUI.add('formalize', function(Y) {
           // submitting the placeholder text.
           form && form.on('submit', function() {
             if (el.get('value') === text) {
-              el.set('value', '').removeClass('placeholder_text');
+              el.set('value', '').removeClass('placeholder-text');
             }
           });
 
@@ -174,7 +174,7 @@ YUI.add('formalize', function(Y) {
           var text = el.getAttribute('placeholder');
 
           if (!el.get('value') || el.get('value') === text) {
-            el.set('value', text).addClass('placeholder_text');
+            el.set('value', text).addClass('placeholder-text');
           }
         });
       }

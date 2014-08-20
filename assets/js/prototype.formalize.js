@@ -45,14 +45,14 @@ var FORMALIZE = (function(window, document, undefined) {
       },
       // FORMALIZE.init.full_input_size
       full_input_size: function() {
-        if (!IE7 || !$$('textarea, input.input_full').length) {
+        if (!IE7 || !$$('textarea, input.input--full').length) {
           return;
         }
 
-        // This fixes width: 100% on <textarea> and class="input_full".
+        // This fixes width: 100% on <textarea> and class="input--full".
         // It ensures that form elements don't go wider than container.
-        $$('textarea, input.input_full').each(function(el) {
-          Element.wrap(el, 'span', {'class': 'input_full_wrap'});
+        $$('textarea, input.input--full').each(function(el) {
+          Element.wrap(el, 'span', {'class': 'input--full-wrap'});
         });
       },
       // FORMALIZE.init.ie6_skin_inputs
@@ -133,7 +133,7 @@ var FORMALIZE = (function(window, document, undefined) {
           el.observe('focus', function() {
             if (el.value === text) {
               el.value = '';
-              el.removeClassName('placeholder_text');
+              el.removeClassName('placeholder-text');
             }
           });
 
@@ -146,7 +146,7 @@ var FORMALIZE = (function(window, document, undefined) {
           form.observe('submit', function() {
             if (el.value === text) {
               el.value = '';
-              el.removeClassName('placeholder_text');
+              el.removeClassName('placeholder-text');
             }
           });
 
@@ -177,7 +177,7 @@ var FORMALIZE = (function(window, document, undefined) {
 
           if (!el.value || el.value === text) {
             el.value = text;
-            el.addClassName('placeholder_text');
+            el.addClassName('placeholder-text');
           }
         });
       }
