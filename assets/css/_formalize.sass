@@ -25,15 +25,8 @@
 .input--xxlarge
   width: 300px
 
-@if $legacy-support-for-ie7
-  .input--full
-    width: 100%
-
-  // Added via JS to <textarea> and class="input--full".
-  // Applies only to IE7. Other browsers don't need it.
-  .input--full-wrap
-    display: block
-    padding-right: 8px
+.input--full
+  width: 100%
 
 // `UI Consistency
 //----------------------------------------------------------------------------------------------------
@@ -90,11 +83,8 @@ input[type="button"]
   vertical-align: top
   width: auto
 
-    // Base64 encoded "../images/button.png" with IE7 fallback
+    // Base64 encoded "../images/button.png"
   background: #ddd url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAAAAADhgtq/AAAAHElEQVQoz2P8z4ADsOCW+UeGnsFs2nDzz5AMHQA+JRlAyyOraAAAAABJRU5ErkJggg==) repeat-x
-
-  @if $legacy-support-for-ie7
-    background: #ddd image-url("button.png") repeat-x
 
   &:hover
     +background-image(linear-gradient(#fff, #eee 1px, #ccc))
@@ -105,26 +95,11 @@ input[type="button"]
     +box-shadow(inset rgba(#000, 0.25) 0 1px 2px 0)
     border-color: #999 #bbb #ddd
 
-  @if $legacy-support-for-ie7
-    // IE7
-    *padding-top: 2px
-    *padding-bottom: 0
-
   // Kill phantom spacing and dotted
   // border that appears in Firefox.
   &::-moz-focus-inner
     border: 0
     padding: 0
-
-@if $legacy-support-for-ie7
-  a.button
-    // IE7
-    *padding-bottom: 3px
-
-  button
-    // IE7
-    *padding-top: 1px
-    *padding-bottom: 1px
 
 textarea,
 select,
@@ -163,12 +138,6 @@ input[type="week"]
 
   &[disabled]
     background-color: #eee
-
-  @if $legacy-support-for-ie7
-    // IE7
-    *padding-top: 2px
-    *padding-bottom: 1px
-    *height: auto
 
 button[disabled],
 input[disabled],
@@ -210,10 +179,6 @@ select[multiple]
 select[size="0"],
 select[size="1"]
   height: 1.8em
-
-  @if $legacy-support-for-ie7
-    // IE7
-    *height: auto
 
 // Tweaks for Safari + Chrome.
 @media (-webkit-min-device-pixel-ratio: 0)
@@ -271,74 +236,3 @@ optgroup
   &::-moz-focus-inner
     border: 0
     padding: 0
-
-@if $legacy-support-for-ie6
-  // `IE6
-  //----------------------------------------------------------------------------------------------------
-
-  // Everything below this line is for IE6.
-  // Delete it if you don't support it! :)
-
-  // Classes are added dynamically via JS,
-  // because IE6 doesn't support attribute
-  // selectors: .ie6_button, .ie6_input, etc.
-
-  // Note: These style rules are somewhat
-  // duplicated because IE6 bombs out when
-  // it sees attribute selectors. Example:
-
-  //   .ie6_button {
-  //     This works in IE6.
-  //   }
-
-  //   .ie6_button,
-  //   input[type=submit] {
-  //     This doesn't work.
-  //   }
-
-  .ie6_button,
-  * html button,
-  * html a.button
-    background: #ddd image-url("button.png") repeat-x
-    border: 1px solid
-    border-color: #ddd #bbb #999
-    cursor: pointer
-    color: #333
-    font: bold 12px/1.2 Arial, sans-serif
-    padding: 2px 10px 0
-    text-decoration: none
-    overflow: visible
-    vertical-align: top
-    width: auto
-
-  * html a.button
-    position: relative
-    top: 3px
-    padding-bottom: 2px
-
-  * html button
-    padding-top: 1px
-    padding-bottom: 1px
-
-  .ie6_input,
-  * html textarea,
-  * html select
-    background: #fff
-    border: 1px solid
-    border-color: #848484 #c1c1c1 #e1e1e1
-    color: #000
-    padding: 2px 3px 1px
-    font-size: 13px
-    font-family: Arial, sans-serif
-    vertical-align: top
-
-  * html select
-    margin-top: 1px
-
-  .placeholder-text,
-  .ie6_input_disabled,
-  .ie6_button_disabled
-    color: #888
-
-  .ie6_input_disabled
-    background: #eee

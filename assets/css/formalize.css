@@ -28,11 +28,6 @@
   width: 100%;
 }
 
-.input--full-wrap {
-  display: block;
-  padding-right: 8px;
-}
-
 label {
   cursor: pointer;
 }
